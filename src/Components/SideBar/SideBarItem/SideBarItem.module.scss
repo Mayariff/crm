@@ -1,0 +1,47 @@
+@import 'src/style/mixins';
+@import 'src/style/variables';
+
+.container {
+  list-style-type: none;
+  padding: 2px 0;
+  position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: 40px;
+    background-color: $lightColor;
+  }
+
+  .button {
+    @include sizeBlock(15px, 15px);
+    border: none;
+    background: transparent no-repeat center scroll;
+    background-size: cover;
+    @include position(absolute, 14px, inherit);
+    right: 20px;
+  }
+
+  .open {
+    transform: rotate(180deg);
+  }
+
+  .navText {
+    @include text($textColor, $baseFont, 20px, 600);
+      text-decoration:none;
+    &:active,
+    &:visited{
+      color:inherit;
+    }
+  }
+
+}
+
+.active {
+  &::before {
+    @include sizeBlock(6px, 100%);
+    @include position(absolute, 0, inherit);
+    right: -3px;
+    content: '';
+    background: $accentColor;
+    border-radius: 5px;
+  }
+}

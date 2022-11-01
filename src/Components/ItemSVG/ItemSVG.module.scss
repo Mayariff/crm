@@ -1,0 +1,32 @@
+@import 'src/style/mixins';
+@import 'src/style/variables';
+
+.itemContainer{
+  @include flexStyle(row, cpase-between, center);
+  vertical-align:middle;
+  position: relative;
+
+  .text{
+   margin-left: 16px;
+  }
+  .img{
+    @include sizeBlock(32px,32px);
+    vertical-align:middle;
+  }
+  .headerText{
+    @include text($lightColor,$baseFont,20px, 700);
+    @media (max-width: 580px){
+      font-size: 16px;
+    }
+  }
+  .btnText{
+    @include text($lightColor,$baseFont,26px, 700);
+    line-height: 32px;
+  }
+  .headerImg{
+    @include sizeBlock(48px,48px);
+    @media (max-width: 580px){
+      @include sizeBlock(40px,40px);
+    }
+  }
+}

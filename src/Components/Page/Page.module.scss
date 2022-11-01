@@ -1,0 +1,23 @@
+@import 'src/style/mixins';
+@import 'src/style/variables';
+
+.container{
+  //width: calc(100% - 364px);
+  width:calc(100% - 300px);
+  height: 100vh;
+  padding: 12px 32px ;
+  //margin: 12px 30px 12px 32px;
+  //padding-right: 2px ;
+  @include  verticalScroll();
+  @media (max-width: 768px){
+    width: 100%;
+  }
+  .title{
+    @include text($textColor,$baseFont,26px,700);
+    line-height: 32px;
+    margin-bottom: 16px;
+  }
+  .contentBlock{
+    @include flexStyle(column, flex-start, left);
+  }
+}

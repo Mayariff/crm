@@ -1,0 +1,22 @@
+@import 'src/style/mixins';
+@import 'src/style/variables';
+
+.container {
+  background-color: $bgcColor;
+  min-height: 100vh;
+  @include sizeBlock(100%, 100%);
+  position: relative;
+  @include text($textColor, $baseFont, 20px, 500);
+  line-height: 24px;
+  .contentContainer {
+    max-width: 1920px;
+    margin: auto;
+    .content {
+      position: relative;
+      @include flexStyle(row, end, start);
+      @media (max-width: 768px) {
+        justify-content: center;
+      }
+    }
+  }
+}

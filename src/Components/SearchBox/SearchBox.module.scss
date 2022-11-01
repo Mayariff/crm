@@ -1,0 +1,43 @@
+@import 'src/style/mixins';
+@import 'src/style/variables';
+
+.container {
+  @include flexStyle(row, space-between, center);
+  margin-bottom: 32px;
+  @media (max-width: 900px) {
+    @include flexStyle(column, space-between, start);
+  }
+
+  .input {
+    border: 3px solid $accentColor;
+    border-radius: 10px;
+    padding: 23px 24px;
+    @include text($textColor, $baseFont, 20px, 500);
+    line-height: 24px;
+    @include sizeBlock(100%, 70px);
+    margin-right: 24px;
+    @media (max-width: 900px) {
+      margin: 0 0 24px 0;
+    }
+
+    &::placeholder {
+      color: $secondTextColor;
+    }
+
+    &:disabled {
+      border-color: $darkColor;
+    }
+  }
+
+  .button {
+    height: 70px;
+    padding: 19px 40px;
+    background: $accentColor;
+    border-radius: 10px;
+
+    &:disabled {
+      background: $darkColor;
+    }
+  }
+
+}

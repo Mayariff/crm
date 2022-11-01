@@ -1,0 +1,26 @@
+@import 'src/style/mixins';
+@import 'src/style/variables';
+
+.container {
+  @include sizeBlock(100%, 100%);
+  padding: 24px;
+  background: $lightColor;
+  box-shadow: 0 2px 8px rgba(2, 0, 97, 0.25);
+  border-radius: 10px;
+
+  .title {
+    @include text(#000, $baseFont, 26px, 700);
+    line-height: 32px;
+    margin-bottom: 16px;
+  }
+
+  .item {
+    @include text(#000, $baseFont, 20px, 500);
+    border-top: 1px solid #D7D7D7;
+    padding: 16px 0;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+}

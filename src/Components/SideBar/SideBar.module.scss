@@ -1,0 +1,26 @@
+@import 'src/style/mixins';
+@import 'src/style/variables';
+
+.sideBarContainer{
+  display: inline-block;
+  @include position(absolute,0,0);
+  min-height: 100vh;
+  right:0;
+  bottom:0;
+  width: 300px;
+  padding: 24px 0 0 32px;
+  box-shadow: 0 0 5px rgba(2, 0, 96, 0.25);
+  @include  verticalScroll();
+  .title{
+    @include text($textColor,$baseFont,20px, 700);
+  }
+  .itemsList{
+    margin-top:40px;
+    position: relative;
+    overflow:hidden;
+    margin-bottom: 166px;
+    .childrenList {
+      margin: 40px 0 40px 48px ;
+    }
+  }
+}
